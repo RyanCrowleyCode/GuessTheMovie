@@ -1,22 +1,17 @@
-
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class GuessTheMovie {
+
+    public GuessTheMovie() throws FileNotFoundException {
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("movies.txt");
-        Scanner scanner = new Scanner(file);
+        Movie movie = new Movie();
+        String randomMovie = movie.getRandomMovie();
 
-        List<String> movies = new ArrayList<>();
+        int points = 10;
 
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            movies.add(line);
-        }
-
+        System.out.println(randomMovie);
 
     }
 }
